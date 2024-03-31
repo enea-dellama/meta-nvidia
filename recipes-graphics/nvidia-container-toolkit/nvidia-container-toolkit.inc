@@ -7,7 +7,7 @@ SRC_URI = "git://github.com/NVIDIA/nvidia-container-toolkit.git;protocol=https;b
 SRCREV = "4668c511de4b311c96bc3dd0310bff40b75083bd"
 
 SRC_URI += "file://config.toml"
-
+SRC_URI += "file://0001-Fix-cgo-LDFLAGS-for-go-1.21-and-later.patch;patchdir=src/${GO_IMPORT}"
 GO_IMPORT = "github.com/NVIDIA/nvidia-container-toolkit"
 
 DEPENDS = " \
