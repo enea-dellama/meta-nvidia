@@ -154,7 +154,7 @@ FILES:${PN}:append= " \
 # FILES:${PN}:append= "${libdir}/libnvidia-ml.so"
 FILES:${PN}:append= "${libdir}/*.so"
 # FILES_SOLIBSDEV = ""
-FILES_SOLIBSDEV:append= "${D}${libdir}/mylib/*.so"
+FILES_SOLIBSDEV:append= "${libdir}/mylib/*.so"
 
 FILES:${PN}-doc:append= " \
 	${mandir} \
