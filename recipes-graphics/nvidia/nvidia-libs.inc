@@ -151,6 +151,8 @@ FILES:${PN}:append= " \
     ${sysconfdir} \
 "
 
+FILES:${PN}:append= "${libdir}/libnvidia-ml.so"
+
 FILES:${PN}-doc:append= " \
 	${mandir} \
 	${datadir}/doc/nvidia \
