@@ -151,7 +151,7 @@ FILES:${PN}:append= " \
     ${sysconfdir} \
 "
 
-FILES:${PN}:append= "${libdir}/libnvidia-ml.so"
+# FILES:${PN}:append= "${libdir}/libnvidia-ml.so"
 FILES:${PN}:append= "${libdir}/*.so"
 FILES_SOLIBSDEV = ""
 
