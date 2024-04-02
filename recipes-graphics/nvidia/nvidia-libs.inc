@@ -153,7 +153,8 @@ FILES:${PN}:append= " \
 
 # FILES:${PN}:append= "${libdir}/libnvidia-ml.so"
 FILES:${PN}:append= "${libdir}/*.so"
-FILES_SOLIBSDEV = ""
+# FILES_SOLIBSDEV = ""
+FILES_SOLIBSDEV:append= "${D}${libdir}/mylib/*.so"
 
 FILES:${PN}-doc:append= " \
 	${mandir} \
@@ -167,6 +168,7 @@ RDEPENDS:${PN}:append= " \
 
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 INHIBIT_PACKAGE_STRIP = "1"
-INSANE_SKIP:${PN}:append = "ldflags already-stripped dev-so"
-INSANE_SKIP_libgl-nvidia:append = "ldflags"
-INSANE_SKIP:${PN}:append= "dev-so"
+INSANE_SKIP:${PN}:append = " ldflags already-stripped dev-so"
+INSANE_SKIP_libgl-nvidia:append = " ldflags"
+INSANE_SKIP:${PN}:append= " dev-so"
+
