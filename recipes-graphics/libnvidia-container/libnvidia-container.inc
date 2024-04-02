@@ -36,5 +36,7 @@ DEPENDS = " \
             libtirpc134 \
             ldconfig-native \        
             "
+RDEPENDS:${PN}:append= " ldconfig-compatibility-symlink"
+
 
 S = "${WORKDIR}/git"
