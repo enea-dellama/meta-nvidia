@@ -10,7 +10,7 @@ do_compile[noexec] = "1"
 
 inherit allarch
 
-SRC_URI = "file://config.toml"
+SRC_URI += "file://config.toml"
 
 do_install:append() {
     install -d ${D}${sysconfdir}/containerd
