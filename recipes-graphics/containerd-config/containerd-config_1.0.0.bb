@@ -1,7 +1,7 @@
 DESCRIPTION = "Create containerd config"
 LICENSE = "CLOSED"
 
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 # Since we're not downloading or unpacking anything, skip those tasks
 do_unpack[noexec] = "1"

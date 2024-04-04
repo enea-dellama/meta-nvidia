@@ -51,6 +51,60 @@ XSERVER = " \
     nvidia"
 ```
 
+# Testing nvidia-container-toolkit and GPU Workloads
+
+- For testing nvidia-container-toolkit inside the container execute the following commands:
+
+```bash
+sudo ctr images pull docker.io/nvidia/cuda:12.0.0-base-ubuntu20.04
+
+sudo ctr run --rm --gpus 0 --runtime io.containerd.runc.v1 --privileged docker.io/nvidia/cuda:12.0.0-base-ubuntu20.04 nvidia-smi nvidia-smi
+```
+
+- For testing nvidia-container-toolkit with k3s
+
+```bash
+cat <<EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gpu
+spec:
+  restartPolicy: Never
+  runtimeClassName: nvidia
+  containers:
+    - name: gpu
+      image: "nvidia/cuda:12.0.0-base-ubuntu20.04"
+      command: [ "/bin/bash", "-c", "--" ]
+      args: [ "while true; do sleep 30; done;" ]
+      resources:
+        limits:
+          nvidia.com/gpu: 0
+EOF
+
+kubectl exec -it gpu -- nvidia-smi
+```
+
+- For testing a sample GPU workload in k3s
+
+```bash
+cat << EOF | kubectl create -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cuda-vectoradd
+spec:
+  restartPolicy: OnFailure
+  runtimeClassName: nvidia
+  containers:
+  - name: cuda-vectoradd
+    image: "nvidia/samples:vectoradd-cuda11.2.1"
+    resources:
+      limits:
+         nvidia.com/gpu: 0
+EOF
+```
+
 # Dependencies
 
 This layer depends on following layers:
