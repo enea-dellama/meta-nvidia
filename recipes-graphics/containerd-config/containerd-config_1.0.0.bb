@@ -2,7 +2,6 @@ DESCRIPTION = "Create containerd config"
 LICENSE = "CLOSED"
 
 SRC_URI = "file://config.toml"
-FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 # Since we're not downloading or unpacking anything, skip those tasks
 do_unpack[noexec] = "1"
