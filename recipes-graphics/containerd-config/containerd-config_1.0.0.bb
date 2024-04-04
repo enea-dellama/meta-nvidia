@@ -17,5 +17,5 @@ do_install:append() {
     install -m 0644 ${WORKDIR}/config.toml ${D}${sysconfdir}/containerd/
 }
 
-RDEPENDS:${PN}:append = "containerd"
+RDEPENDS:${PN}:append = " containerd-opencontainers"
 FILES:${PN}:append= "${sysconfdir}/containerd/config.toml"
