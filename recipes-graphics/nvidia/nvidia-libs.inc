@@ -37,8 +37,8 @@ do_install:append() {
     cp ${NVIDIA_SRC}/libglxserver_nvidia.so.${PV} ${D}${libdir}/xorg/modules/extensions/
     cp ${NVIDIA_SRC}/libnvidia-tls.so.${PV} ${D}${libdir}/
     cp ${NVIDIA_SRC}/libGLX_nvidia.so.${PV} ${D}${libdir}/
-    install -m 444 ${NVIDIA_SRC}/nvidia-application-profiles-550.54.15-rc  ${D}${datadir}/nvidia/
-    install -m 444 ${NVIDIA_SRC}/nvidia-application-profiles-550.54.15-key-documentation ${D}${datadir}/nvidia/
+    install -m 444 ${NVIDIA_SRC}/nvidia-application-profiles-570.153.02-rc  ${D}${datadir}/nvidia/
+    install -m 444 ${NVIDIA_SRC}/nvidia-application-profiles-570.153.02-key-documentation ${D}${datadir}/nvidia/
     cp ${NVIDIA_SRC}/libnvidia-glvkspirv.so.${PV} ${D}${libdir}/
     
     install -m 644  ${NVIDIA_SRC}/10_nvidia.json ${D}${datadir}/glvnd/egl_vendor.d/

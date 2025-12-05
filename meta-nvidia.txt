@@ -23,7 +23,7 @@ recipes-graphics/nvidia/files
 recipes-graphics/nvidia/files/kbuild-debug.patch
 recipes-graphics/nvidia/nvidia-base.inc
 recipes-graphics/nvidia/nvidia-libs.inc
-recipes-graphics/nvidia/nvidia_525.85.12.bb
+recipes-graphics/nvidia/nvidia_570.153.02.bb
 recipes-graphics/nvidia/nvidia-kernel-module.inc
 recipes-graphics/libglvnd
 recipes-graphics/libglvnd/files
