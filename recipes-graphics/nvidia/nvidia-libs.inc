@@ -49,7 +49,7 @@ do_install:append() {
     cp ${NVIDIA_SRC}/libnvidia-gtk3.so.${PV} ${D}${libdir}/
     cp ${NVIDIA_SRC}/libnvidia-cfg.so.${PV} ${D}${libdir}/
     cp ${NVIDIA_SRC}/libnvidia-ml.so.${PV} ${D}${libdir}/
-    cp ${NVIDIA_SRC}/libvdpau_nvidia.so.${PV} ${D}${libdir}/vdpau/
+    #cp ${NVIDIA_SRC}/libvdpau_nvidia.so.${PV} ${D}${libdir}/vdpau/
     cp ${NVIDIA_SRC}/libcuda.so.${PV} ${D}${libdir}/
     cp ${NVIDIA_SRC}/libnvidia-opencl.so.${PV} ${D}${libdir}/
     cp ${NVIDIA_SRC}/libOpenCL.so.1.0.0 ${D}${libdir}/
@@ -71,9 +71,9 @@ do_install:append() {
     ln -sf libnvidia-ml.so.${PV} ${D}${libdir}/libnvidia-ml.so.1
     ln -sf libnvidia-ml.so.${PV} ${D}${libdir}/libnvidia-ml.so
 
-    ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/vdpau/libvdpau_nvidia.so.1
-    ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/libvdpau_nvidia.so
-    ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/libvdpau_nvidia.so.1
+    #ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/vdpau/libvdpau_nvidia.so.1
+    #ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/libvdpau_nvidia.so
+    #ln -sf libvdpau_nvidia.so.${PV} ${D}${libdir}/libvdpau_nvidia.so.1
 
     ln -sf libnvidia-nvvm.so.${PV} ${D}${libdir}/libnvidia-nvvm.so.1
     ln -sf libnvidia-nvvm.so.${PV} ${D}${libdir}/libnvidia-nvvm.so.4
@@ -163,7 +163,6 @@ FILES:${PN}-doc:append= " \
 
 RDEPENDS:${PN}:append= " \
 	xserver-xorg-module-libwfb \
-    libvdpau \
 "
 
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
